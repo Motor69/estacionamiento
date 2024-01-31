@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+:root {
+    --primary: #0077b6;
+    --secondary: #48cae4;
+    --black: #333;
+    --white: #fff;
+    --coffee: #ff9800;
+    --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
+    --ocre: #f1c755;
+    --naranco: #853400;
+    --cafesito: #212e3a;
+}
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+html {
+    /* font-size: 62.5%; */
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+} 
+html::-webkit-scrollbar{
+    width: .8rem;
+}
+html::-webkit-scrollbar-track {
+    background: transparent;
+}
+html::-webkit-scrollbar-thumb {
+    background: var(--cafesito);
+    border-radius: .5rem;
+}
+
+/* header */
+
+.buton {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 3rem;
+    background: var(--naranco);
+    border-radius: .5rem;
+    color: var(--white);
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+.buton:hover {
+    background: var(--white);
+    color: var(--black);
+}
+
+/* end header */
+
+
+/* reservations */
+.reservation {
+    width: 80%;
+    height: 80%;
+    margin: 0 auto;
+}
+
+.reservation form {
+    padding: 2rem;
+    border: .2rem solid rgba(0, 0, 0, 0.1);
+    border-radius: 1.5rem;
+}
+.reservation form .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+.reservation form .container .box {
+    flex: 1 1 40rem;
+}
+.reservation form .container .box p {
+    font-size: 1.4rem;
+    color: var(--coffee);
+}
+.reservation form .container .box .input {
+    font-size: 1.4rem;
+    width: 100%;
+    padding: 1rem 0;
+    margin: 1rem 0;
+    border-bottom: .2rem solid rgba(0, 0, 0, 0.1);
+    color: var(--black);
+}
+ /* end reservations */
+
+ /* media query´s */
+
+ @media(max-width:991px){
+
+    html {
+        font-size: 55%;
+    }
+    .header {
+        padding: 2rem 3rem;
+    }
+
+
+ }
+ @media (max-width: 1105px){
+
+    #menu-btn {
+        display: inline-block;
+    } 
+    .header .navbar {
+        position: absolute;
+        top: 110%; right: -110%;
+        width: 30rem;
+        box-shadow: var(--box-shadow);
+        background: var(--white);
+        border-radius: .5rem;
+    }
+    .header .navbar.active {
+        right: 2rem;
+        transition: .4s linear;
+    }
+    .header .navbar a {
+        font-size: 2rem;
+        margin: 2rem 2.5rem;
+        display: block;
+    }
+    .home .slide .content {
+        width: 50%;
+    }.review .review-slider {
+        width: 100%;
+        padding: 1rem;
+        padding-top: 15%;
+    }
+    .reservation {
+        width: 718px;
+        height: 800px;
+    }
+ }
+
+ @media (max-width: 768px){
+
+    #menu-btn {
+        display: inline-block;
+    } 
+    .header .navbar {
+        position: absolute;
+        top: 110%; right: -110%;
+        width: 30rem;
+        box-shadow: var(--box-shadow);
+        background: var(--white);
+        border-radius: .5rem;
+    }
+    .header .navbar.active {
+        right: 2rem;
+        transition: .4s linear;
+    }
+    .header .navbar a {
+        font-size: 2rem;
+        margin: 2rem 2.5rem;
+        display: block;
+    }
+    .home .slide .content {
+        width: 50%;
+    }.review .review-slider {
+        width: 100%;
+        padding: 1rem;
+        padding-top: 15%;
+    }
+    .reservation {
+        width: 718px;
+        height: 800px;
+    }
+ }
+ @media (max-width: 450px){
+
+    html {
+        font-size: 50%;
+    }
+    .home .slide .content {
+        width: 30rem;
+    }
+    .home .slide .content h3 {
+        font-size: 3rem;
+    }
+    .reservation {
+        width: 400px;
+        height: 800px;
+    }
+ }

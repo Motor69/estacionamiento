@@ -1,0 +1,197 @@
+<!-- Enlace a Bootstrap CSS -->
+<link rel="stylesheet" href="css/styles.css">
+<!-- <link href="css/bootstrap.min.css"rel="stylesheet">
+<sccript src="scripts/js/bootstrap.bundle.min.js"> -->
+
+<style>
+    /* Personalización adicional del estilo si es necesario */
+    body {
+        background-color: #f8f9fa;
+    }
+    .container-fluid {
+        padding: 20px;
+        transition: margin-left 0.5s; /* Transición para suavizar el cambio de margen en dispositivos más pequeños */
+        width: 75%;
+    }
+    .card {
+        margin-bottom: 20px;
+    }
+    @media (max-width: 768px) {
+        .container-fluid {
+            margin-left: 0;
+        }
+    }
+    /* Estilo para el menú lateral */
+.sidenav {
+    height: 100%;
+    width: 18%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #343a40;
+    padding-top: 20px;
+    padding-left: 10px;
+    color: white;
+    transition: width 0.5s; /* Agregamos una transición para suavizar el cambio de tamaño */
+}
+.sidenav a {
+    padding: 8px 8px 8px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+}
+.sidenav a:hover {
+    background-color: #555;
+}
+</style>
+
+
+<div class="sidenav" id="sidenav">
+    <h3>Menú</h3>
+    <a href="#">Inicio</a>
+    <a href="#" onclick="cargarDiv('#conteneitor', 'navs/registro.php')">Registro</a>
+    <a href="#" onclick="cargarDiv('#conteneitor', 'navs/cajon.php')">Cajones</a>
+    <a href="#" onclick="cargarDiv('#conteneitor', 'navs/cliente.php')">Clientes</a>
+    <a href="#" onclick="cargarDiv('#conteneitor', 'navs/vehiculo.php')">Vehículos</a>
+    <a href="#" onclick="cargarDiv('#conteneitor', 'navs/tarifa.php')">Tarifas</a>
+    <a href="#" onclick="cargarDiv('#conteneitor', 'navs/reporte.php')">Reportes</a>
+    <a href="#" onclick="cargarDiv('#conteneitor', 'navs/encargado.php')">Encargados</a>
+    <a href="logout.php" onclick="salir()">Salir</a>
+</div>
+
+<!-- Contenido principal -->
+<div class="container-fluid" id="conteneitor" style="margin-left: 25%;">
+    <h2 class="d-none d-md-block">Dashboard de Administración</h2>
+    <h4 class="d-md-none">Dashboard de Administración</h4>
+
+    <!-- <button id="menu-toggle-btn" class="btn btn-dark" onclick="toggleMenu()">☰</button> -->
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Usuarios</h5>
+                    <p class="card-text">Gestione los usuarios del sistema.</p>
+                    <a href="#" class="btn btn-primary">Ir a Usuarios</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Usuarios</h5>
+                    <p class="card-text">Gestione los usuarios del sistema.</p>
+                    <a href="#" class="btn btn-primary">Ir a Usuarios</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Usuarios</h5>
+                    <p class="card-text">Gestione los usuarios del sistema.</p>
+                    <a href="#" class="btn btn-primary">Ir a Usuarios</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Usuarios</h5>
+                    <p class="card-text">Gestione los usuarios del sistema.</p>
+                    <a href="#" class="btn btn-primary">Ir a Usuarios</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Usuarios</h5>
+                    <p class="card-text">Gestione los usuarios del sistema.</p>
+                    <a href="#" class="btn btn-primary">Ir a Usuarios</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Enlace a Bootstrap JS y Popper.js (necesarios para ciertos componentes de Bootstrap) -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="scripts/js/jquery.min.js"></script>
+<script src="scripts/js/funciones.js"></script>
+
+
+
+
+<div class="container mt-5">
+    <h2>Registro de entrada</h2>
+    <form>
+        <!-- Campo Vehículo -->
+        <div class="form-group">
+            <label for="vehiculo">Vehículo:</label>
+            <input type="text" class="form-control" id="vehiculo" placeholder="Ingrese el tipo de vehículo">
+        </div>
+
+        <!-- Campos Fecha y Hora de Ingreso -->
+        <!-- <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="fechaIngreso">Fecha de Ingreso:</label>
+                <input type="date" class="form-control" id="fechaIngreso">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="horaIngreso">Hora de Ingreso:</label>
+                <input type="time" class="form-control" id="horaIngreso">
+            </div>
+        </div> -->
+
+        <!-- Campos Fecha y Hora de Salida -->
+        <!-- <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="fechaSalida">Fecha de Salida:</label>
+                <input type="date" class="form-control" id="fechaSalida">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="horaSalida">Hora de Salida:</label>
+                <input type="time" class="form-control" id="horaSalida">
+            </div>
+        </div> -->
+
+        <!-- Campo Empleado -->
+        <div class="form-group">
+            <label for="empleado">Empleado:</label>
+            <input type="text" class="form-control" id="empleado" placeholder="Nombre del empleado">
+        </div>
+
+        <!-- Campo Tarifa -->
+        <div class="form-group">
+            <label for="tarifa">Tarifa:</label>
+            <input type="text" class="form-control" id="tarifa" placeholder="Ingrese la tarifa">
+        </div>
+
+        <!-- Campo Cajón -->
+        <div class="form-group">
+            <label for="cajon">Cajón:</label>
+            <input type="text" class="form-control" id="cajon" placeholder="Número de cajón">
+        </div>
+
+        <!-- Botón de Enviar -->
+        <button type="submit" class="btn btn-primary">Registrar</button>
+    </form>
+</div>
+
+<!-- Scripts de Bootstrap (jQuery y Popper.js desde CDN) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
