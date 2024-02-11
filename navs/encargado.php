@@ -80,3 +80,4 @@
             </tr>
             <?php endwhile;?>
     </table>
+</div>

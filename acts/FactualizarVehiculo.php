@@ -29,7 +29,7 @@
         <div class="box">
             <p>PUERTAS: <span>*</span></p>
             <select id="puertas" class="input">
-                <option selected disabled>Puertas del vehículo</option>
+                <option selected value="<?php echo $vehiculo['Puertas'] ?>"><?php echo $vehiculo['Puertas'] ?> Puertas</option>
                 <option value="2">2 Puertas</option>
                 <option value="4">4 Puertas</option>
             </select>
@@ -43,7 +43,7 @@
         <div class="box">
             <p>CLIENTE: <span>*</span></p>
             <select id="idCliente" class="input" required>
-                <option selected disabled>Seleccione a que cliente pertenece</option>
+                <option selected value="<?php echo $vehiculo['ID_Cliente']?>"><?php echo $vehiculo['ID_Cliente']?></option>
                 <?php
                     include '../conexion.php';
                     $query = "SELECT ID_Cliente, Nombre FROM cliente";

@@ -58,3 +58,46 @@
 </form>
 
 </section>
+
+<div class="tablas">
+    <table class="table table-striped table-dark table_id " id="table_client">
+        <thead>    
+        <tr>
+        <th>Vehiculo</th>
+        <th>Fecha Ingreso</th>
+        <th>Hora Ingreso</th>
+        <th>Fecha Salida</th>
+        <th>Hora Salida</th>
+        <th>ID Empleado</th>
+        <th>ID Tariifa</th>
+        <th>ID Cajon</th>
+        <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+        include '../conexion.php';
+        $query = mysqli_query($DB_conexion,"SELECT * FROM registro");
+
+        while($fila=mysqli_fetch_assoc($query)):
+            ?>
+            <tr>
+            <td><?php echo $fila['ID_Vehiculo']; ?></td>
+            <td><?php echo $fila['Fecha_Ingreso']; ?></td>
+            <td><?php echo $fila['Hora_Ingreso']; ?></td>
+            <td><?php echo $fila['Fecha_Salida']; ?></td>
+            <td><?php echo $fila['Hora_Salida']; ?></td>
+            <td><?php echo $fila['ID_Empleado']; ?></td>
+            <td><?php echo $fila['ID_Tarifa']; ?></td>
+            <td><?php echo $fila['ID_Cajon']; ?></td>
+            <td>
+            <a class="btn btn-warning" href="#" onclick="cargarDiv('#conteneitor', 'acts/FactualizarRegistro.php?ID=<?php echo $fila['ID_Registro']?>')">
+            <i class="fa fa-edit"></i>Editar</a>
+            <a class="btn btn-danger btn-del" href="#" onclick="eliminarRegistro(<?php echo $fila['ID_Registro']; ?>)">
+                        <i class="fa fa-trash"></i>Eliminar
+                    </a>
+            </td>
+            </tr>
+            <?php endwhile;?>
+    </table>
+</div>

@@ -9,7 +9,7 @@
     $user = $_POST['userE'];
     $password = $_POST['contraE'];
 
-    $con = "UPDATE empleados SET Nombre = '" . $nombre . "', Direccion = '" . $direccion . "', Telefono = '" . $telefono . "', Correo = '" . $correo . "', Usuario = '" . $user . "', Password = '" . $password . "'";
+    $con = "UPDATE empleados SET Nombre = '" . $nombre . "', Direccion = '" . $direccion . "', Telefono = '" . $telefono . "', Correo = '" . $correo . "', Usuario = '" . $user . "', Password = '" . $password . "' WHERE ID = '" . $ID . "'";
 
     if($datos = mysqli_query($DB_conexion, $con)){
         echo "Encargado actualizado correctamente";

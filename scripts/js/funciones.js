@@ -30,6 +30,8 @@ function cargarDiv(div, url) {
     $(div).load(url);
 };
 
+//*FUNCIONES PARA REGISTROS
+
 function regCliente() {
     let nombreCl = $("#nombreCl").val();
     let direcCl = $("#direcCl").val();
@@ -150,6 +152,39 @@ function regCajones() {
     });
 };
 
+
+function regServo() {
+    let descripcion = $("#Descripcion").val();
+    let grados = $("#Grados").val();
+    let estatus = $("#Estatus").val();
+
+    console.log(descripcion, grados, estatus)
+
+    $.post("regs/registrarServo.php", {
+        "descripcion": descripcion,
+        "grados": grados,
+        "estatus": estatus
+    }, function (respuesta){
+        alert(respuesta);
+        $("#Descripcion").val("");
+        $("#Grados").val("");
+        $("#Estatus").val("");
+        cargarDiv("#conteneitor", "navs/servo.php");
+    });
+};
+
+//*FUNCIONES PARA ELIMINAR REGISTROS
+
+function eliminarRegistro(idRegistro) {
+    $.post("elim/eliminarRegistro.php", {
+        "idRegistro": idRegistro
+    },
+    function(result){
+        alert(result);
+        cargarDiv("#conteneitor", "navs/registro.php");
+    });
+};
+
 function eliminarCajon(idCajon) {
     // console.log(idCajon);
     $.post("elim/eliminarCajon.php", {
@@ -200,6 +235,19 @@ function eliminarEncargado(idEncargado) {
         cargarDiv("#conteneitor", "navs/encargado.php");
     });
 };
+
+
+function eliminarServo(idServo) {
+    $.post("elim/eliminarServo.php", {
+        "idServo": idServo
+    },
+    function (result) {
+        alert(result);
+        cargarDiv("#conteneitor", "navs/servo.php")
+    });
+}
+
+//*FUNCIONES PARA ACTUALIZAR REGISTROS
 
 function actCliente(idCliente) {
     let nombreCl = $("#nombreCl").val();
@@ -275,4 +323,34 @@ function actEncargado(idEncargado) {
         alert(respuesta);
         cargarDiv("#conteneitor", "navs/encargado.php");
     });
+};
+
+function actServo(idServo) {
+    let descripcion = $("#Descripcion").val();
+    let grados = $("#Grados").val();
+    let estatus = $("#Estatus").val();
+
+    $.post("updates/actualizarServo.php", {
+        "idServo": idServo,
+        "descripcion": descripcion,
+        "grados": grados,
+        "estatus": estatus
+    }, function (respuesta){
+        alert(respuesta);
+        $("#Descripcion").val("");
+        $("#Grados").val("");
+        $("#Estatus").val("");
+        cargarDiv("#conteneitor", "navs/servo.php");
+    });
+}
+
+//* MODALES
+
+function abrirModal(idCajon) {
+    $("#modalPromociones").modal("show");
+    $("#idCajon").val(idCajon);
+};
+
+function cerrarModal() {
+    $("#modalPromociones").modal('hide');
 };

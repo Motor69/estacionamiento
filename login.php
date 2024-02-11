@@ -26,7 +26,7 @@
             $_SESSION['LoggedIn'] = TRUE;
             $_SESSION['name'] = $_POST['Usuario'];
             $_SESSION['ID'] = $id;
-            // $USER = $_SESSION['name'];
+            // $_SESSION['nombre'] = $Nombre;
             header('location:menu.php');
         } else {
             echo '<script languaje="javascript"> alert("Contraseña Incorrecta");
